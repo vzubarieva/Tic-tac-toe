@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Board} from "./components/Board"
-import { ScoreBoard } from './components/ScoreBoard';
-import {ResetButton} from "./components/ResetButton"
+import {Board} from "./Board"
+import { ScoreBoard } from './ScoreBoard';
+import {ResetButton} from "./ResetButton"
 
 function App() {
 
@@ -34,13 +34,13 @@ function App() {
   const winner = checkWinner(updatedBoard);
 
   if(winner) {
-    if(winner === "0"){
+    if(winner === "O"){
       let{oScore} = scores;
-      oScore =+ 1
+      oScore += 1  
       setScores({...scores, oScore})
     }else {
       let{xScore} = scores;
-      xScore =+ 1
+      xScore = xScore + 1
       setScores({...scores, xScore})
     }
   }
